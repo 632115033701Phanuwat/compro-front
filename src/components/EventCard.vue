@@ -27,13 +27,15 @@ export default {
   padding: 20px;
   width: 250px;
   cursor: pointer;
-  border: 1px solid #39495c;
-  margin-bottom: 18px;
+  border: 1px solid #000000;
+  background-color: rgb(112, 216, 157);
+  margin: 35px 0 0 0;
 }
-
 .event-card:hover {
-  transform: scale(1.01);
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.2);
+  box-shadow: 20px 10px 20px 10px rgba(155, 3, 92, 0.2);
+  background-color: palevioletred;
+  color: #fff;
 }
 
 .event-link {

@@ -1,14 +1,9 @@
 <template>
-  <h1>Events For Good</h1>
+  <h1 class="color">Vaccine Detail</h1>
 
   <div class="events">
     <div class="search-box">
-      <BaseInput
-        v-model="keyword"
-        type="text"
-        label="Search..."
-        @input="updateKeyword"
-      />
+      <BaseInput v-model="keyword" type="text" @input="updateKeyword" />
     </div>
 
     <EventCard
@@ -137,7 +132,10 @@ export default {
 }
 .pagination {
   display: flex;
-  width: 290px;
+  width: 830px;
+  font-size: 25px;
+  border: 1px #39495c;
+  border-radius: 25px;
 }
 
 .pagination a {
@@ -156,5 +154,15 @@ export default {
 
 .search-box {
   width: 300px;
+  margin: 10px 0 0 0px;
+}
+.color {
+  padding: 10px;
+  width: 400px;
+  margin: 10px 0 0 550px;
+  background-color: none;
+  border-radius: 25px;
+  background-color: #9fe2bf;
+  color: #fff;
 }
 </style>

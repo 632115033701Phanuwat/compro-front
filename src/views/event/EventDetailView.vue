@@ -1,7 +1,15 @@
 <template>
-  <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
-  <p>{{ event.description }}</p>
-  <img v-for="url in event.imageUrls" :key="url" :src="url" />
+  <blockquote></blockquote>
+  <div class="color2">
+    <h1>{{ event.name }}</h1>
+  </div>
+  <blockquote></blockquote>
+  <div class="color">
+    <img class="img" :src="event.addimg" />
+    <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
+    <p>Age: {{ event.age }}</p>
+    <img v-for="url in event.imageUrls" :key="url" :src="url" />
+  </div>
 </template>
 
 <script>
@@ -20,5 +28,29 @@ img {
 /* Add a hover effect (blue shadow) */
 img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+</style>
+<style scoped>
+.color {
+  padding: 10px;
+  width: 550px;
+  margin: 0px 0 0 490px;
+  background-color: none;
+  border-radius: 60px;
+  background-color: #6979a1;
+  color: #fff;
+}
+.color2 {
+  padding: 10px;
+  width: 700px;
+  margin: 20px 0 0 400px;
+  background-color: none;
+  border-radius: 60px;
+  background-color: #69a173;
+  color: #fff;
+}
+.img {
+  height: 150px;
+  width: 150px;
 }
 </style>

@@ -25,7 +25,7 @@ export default {
 <style scoped>
 .event-card {
   padding: 20px;
-  width: 250px;
+  width: 300px;
   cursor: pointer;
   border: 1px solid #000000;
   background-color: rgb(112, 216, 157);

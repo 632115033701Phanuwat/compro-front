@@ -5,7 +5,7 @@
   >
     <div class="event-card">
       <span>@{{ event.time }} on {{ event.date }}</span>
-      <h4>{{ event.title }}</h4>
+      <h4>{{ event.name }}</h4>
       <span>by</span>
       <h5>{{ event.organizer.name }}</h5>
     </div>

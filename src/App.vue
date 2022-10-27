@@ -66,7 +66,7 @@ body {
   max-height: 100;
 }
 .backgroud {
-  background-image: url('C:\Users\ASUS TUF FA506\OneDrive\เดสก์ท็อป\COM\compro-frontend\src\assets\covid-19-healthcare-workers-pandemic-concept-lovely-caring-asian-doctor-female-nurse-scrubs-showing-heart-gesture-smiling-taking-care-patients-with-love-white-background.jpg');
+  background-image: url('~@/assets/covid-19-healthcare-workers-pandemic-concept-lovely-caring-asian-doctor-female-nurse-scrubs-showing-heart-gesture-smiling-taking-care-patients-with-love-white-background.jpg');
   background-repeat: no-repeat;
   height: 1000px;
 }

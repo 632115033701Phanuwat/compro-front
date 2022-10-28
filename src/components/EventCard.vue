@@ -4,9 +4,11 @@
     :to="{ name: 'EventLayoutView', params: { id: event.id } }"
   >
     <div class="event-card">
-      <span>@{{ event.time }} on {{ event.date }}</span>
+      <img class="img" v-if="event.addimg" :src="event.addimg" alt="" />
+      <img v-for="url in event.imageUrls" :key="url" :src="url" />
+
       <h4>{{ event.name }}</h4>
-      <span>by</span>
+      <span>case</span>
       <h5>{{ event.organizer.name }}</h5>
     </div>
   </router-link>
@@ -24,12 +26,14 @@ export default {
 </script>
 <style scoped>
 .event-card {
-  padding: 20px;
+  padding: 25px;
   width: 300px;
   cursor: pointer;
   border: 1px solid #000000;
+  margin-bottom: 18px;
   background-color: rgb(112, 216, 157);
-  margin: 35px 0 0 0;
+  border-radius: 25px;
+  margin: 35px;
 }
 .event-card:hover {
   transform: scale(1.2);
@@ -41,5 +45,13 @@ export default {
 .event-link {
   color: #2c3e50;
   text-decoration: none;
+}
+img {
+  /* border: 1px solid #ddd; 
+  border-radius: 4px;  */
+  padding: 5px; /* Some padding */
+  margin: 5px; /* Some margin */
+  width: 150px; /* Set a small width */
+  height: 150px;
 }
 </style>

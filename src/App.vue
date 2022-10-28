@@ -39,9 +39,9 @@
     </div>
     <nav>
       <router-link :to="{ name: 'EventList' }">Home</router-link> |
-      <router-link :to="{ name: 'about' }">About</router-link> |
+      <!-- <router-link :to="{ name: 'about' }">About</router-link> | -->
       <span v-if="isAdmin">
-        <router-link :to="{ name: 'AddEvent' }"> New Event</router-link>
+        <router-link :to="{ name: 'AddEvent' }"> New Patients</router-link>
       </span>
     </nav>
     <router-view />
@@ -70,14 +70,18 @@ export default {
 
 <style>
 body {
-  max-height: 100;
-}
-.backgroud {
-  background-image: url('~@/assets/covid-19-healthcare-workers-pandemic-concept-lovely-caring-asian-doctor-female-nurse-scrubs-showing-heart-gesture-smiling-taking-care-patients-with-love-white-background.jpg');
-  background-repeat: no-repeat;
-  height: 1000px;
+  /* max-height: 100%; */
+  background-image: url('~@/assets/Nurse Backgrounds.jfif');
+  /* background-repeat: no-repeat; */
+  /* height: auto; */
   background-size: cover;
 }
+/* .backgroud {
+  background-image: url('~@/assets/background.jfif');
+  background-repeat: no-repeat;
+  height: auto;
+  background-size: cover;
+} */
 @keyframes yellowfade {
   from {
     background: yellow;

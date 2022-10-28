@@ -1,35 +1,49 @@
 <template>
-  <div>
-    <h1>Create an event</h1>
+  <div class="card card-container">
+    <h1>Create an patients</h1>
     <form @submit.prevent="saveEvent">
+      <h3>ID</h3>
+      <BaseInput v-model="event.id" type="text" label="ID" />
+      <h3>Vaccine</h3>
       <BaseInput
-        v-model="event.category"
+        v-model="event.vaccine"
         type="text"
-        label="Category"
+        label="Vaccine"
         class="field"
       />
+      <BaseInput
+        v-model="event.vaccine1"
+        type="text"
+        label="Vaccine1"
+        class="field"
+      />
+      <BaseInput
+        v-model="event.vaccine2"
+        type="text"
+        label="Vaccine2"
+        class="field"
+      />
+      <h3>The image of the Event</h3>
+      <UploadImages @changed="handleImages" />
+      <h3>Name & describe patients</h3>
 
-      <h3>Name & describe your event</h3>
+      <BaseInput v-model="event.name" type="text" label="Name" />
+      <BaseInput v-model="event.age" type="text" label="Age" />
+      <!-- <BaseInput v-model="event.description" type="text" label="Description" /> -->
 
-      <BaseInput v-model="event.title" type="text" label="Title" />
+      <h3>Location of patients</h3>
 
-      <BaseInput v-model="event.description" type="text" label="Description" />
-
-      <h3>Where is your event?</h3>
-
-      <label>Location</label>
+      <!-- <label>Location</label> -->
 
       <BaseInput v-model="event.location" type="text" label="Location" />
 
-      <h3>Who is your organizer?</h3>
+      <h3>Docter</h3>
 
       <BaseSelect
         :options="GStore.organizers"
         v-model="event.organizer.id"
-        label="Select an Organizer"
+        label="Select an Docter"
       />
-      <h3>The image of the Event</h3>
-      <UploadImages @changed="handleImages" />
 
       <button type="submit">Submit</button>
     </form>
@@ -49,12 +63,15 @@ export default {
   data() {
     return {
       event: {
-        category: '',
-        title: '',
+        vaccine: '',
+        vaccine1: '',
+        vaccine2: '',
+        imageUrls: [],
+        id: '',
+        name: '',
         description: '',
         location: '',
-        organizer: { id: '', name: '' },
-        imageUrls: []
+        organizer: { id: '', name: '' }
       },
       files: []
     }
@@ -75,7 +92,7 @@ export default {
               params: { id: response.data.id }
             })
             this.GStore.flashMessage =
-              'You are successfully add a new event for ' + response.data.title
+              'You are successfully add a new event for ' + response.data.name
             setTimeout(() => {
               this.GStore.flashMessage = ''
             }, 3000)
@@ -91,4 +108,21 @@ export default {
   }
 }
 </script>
-<style scoped></style>
+<style scoped>
+.card-container.card {
+  max-width: 950px !important;
+  padding: 40px 40px;
+}
+.card {
+  background-color: #a7d8af;
+  padding: 50px 60px 50px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+</style>

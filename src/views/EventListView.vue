@@ -5,13 +5,13 @@
     <div class="search-box">
       <BaseInput v-model="keyword" type="text" @input="updateKeyword" />
     </div>
-
-    <EventCard
-      v-for="event in events"
-      :key="event.id"
-      :event="event"
-    ></EventCard>
-
+    <div class="events2">
+      <EventCard
+        v-for="event in events"
+        :key="event.id"
+        :event="event"
+      ></EventCard>
+    </div>
     <div class="pagination">
       <router-link
         id="page-prev"
@@ -130,6 +130,12 @@ export default {
   flex-direction: column;
   align-items: center;
 }
+.events2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
 .pagination {
   display: flex;
   width: 830px;
@@ -157,9 +163,11 @@ export default {
   margin: 10px 0 0 0px;
 }
 .color {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
   width: 400px;
-  margin: 10px 0 0 550px;
+  margin: auto;
   background-color: none;
   border-radius: 25px;
   background-color: #9fe2bf;

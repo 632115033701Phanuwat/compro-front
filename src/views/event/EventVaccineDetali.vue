@@ -4,15 +4,12 @@
     <blockquote></blockquote>
     <div>
       <h1 class="vaccine">1. {{ event.vaccine }}</h1>
-      <p>date: {{ event.date }} time: {{ event.time }}</p>
     </div>
     <div>
       <h1 class="vaccine2">2. {{ event.vaccine1 }}</h1>
-      <p>date: {{ event.date1 }} time: {{ event.time1 }}</p>
     </div>
     <div>
       <h1 class="vaccine3">3. {{ event.vaccine2 }}</h1>
-      <p class="p1">date: {{ event.date2 }} time: {{ event.time2 }}</p>
     </div>
   </div>
 </template>
@@ -53,7 +50,8 @@ export default {
 }
 h1 {
   color: rgb(255, 255, 255);
-  margin: 40px 0px 0px 490px;
+  margin: auto;
+  margin-block: 50px;
   background-color: rgb(229, 143, 143);
   border-radius: 35px;
   height: 100px;
@@ -63,6 +61,6 @@ p {
   margin: -50px 0px 0px 30px;
 }
 .p1 {
-  margin: -30px 0px 0px 30px;
+  margin: -80px 0px 0px 30px;
 }
 </style>

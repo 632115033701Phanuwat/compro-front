@@ -5,10 +5,14 @@
   </div>
   <blockquote></blockquote>
   <div class="color">
-    <img class="img" :src="event.addimg" />
-    <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
+    <div class="imgg">
+      <img class="img" v-if="event.addimg" :src="event.addimg" alt="" />
+
+      <!-- <img class="img" :src="event.imageUrls" alt="" /> -->
+      <img v-for="url in event.imageUrls" :key="url" :src="url" />
+    </div>
+    <p>Address: {{ event.location }}</p>
     <p>Age: {{ event.age }}</p>
-    <img v-for="url in event.imageUrls" :key="url" :src="url" />
   </div>
 </template>
 
@@ -19,22 +23,21 @@ export default {
 </script>
 <style scoped>
 img {
-  border: 1px solid #ddd; /* Gray border */
-  border-radius: 4px; /* Rounded border */
+  /* border: 1px solid #ddd; 
+  border-radius: 4px;  */
   padding: 5px; /* Some padding */
   margin: 5px; /* Some margin */
   width: 150px; /* Set a small width */
+  height: 150px;
 }
 /* Add a hover effect (blue shadow) */
 img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
-</style>
-<style scoped>
 .color {
   padding: 10px;
   width: 550px;
-  margin: 0px 0 0 490px;
+  margin: auto;
   background-color: none;
   border-radius: 60px;
   background-color: #6979a1;
@@ -43,14 +46,17 @@ img:hover {
 .color2 {
   padding: 10px;
   width: 700px;
-  margin: 20px 0 0 400px;
+  margin: auto;
   background-color: none;
   border-radius: 60px;
   background-color: #69a173;
   color: #fff;
 }
-.img {
+/* .img {
   height: 150px;
   width: 150px;
+} */
+.imgg {
+  margin: auto;
 }
 </style>

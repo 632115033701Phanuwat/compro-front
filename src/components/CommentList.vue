@@ -1,22 +1,24 @@
 <template>
   <div class="comment-container">
     <h4>View Comment</h4>
+    <!-- {{ GStore.event }} -->
     <div
       id="comment"
       v-for="commentHistory in commentsHistory.commentList"
       :key="commentHistory"
     >
       <p>-----------------------------------</p>
-      <p>Patient: {{ commentHistory.name }}</p>
+      <!-- <p>Patient: {{ commentHistory.name }}</p> -->
       <p>Doctor: {{ commentHistory.name }}</p>
-      <p>Date: {{ commentHistory.id }}</p>
+      <!-- <p>Date: {{ commentHistory.id }}</p> -->
       <p>Comment: {{ commentHistory.comment }}</p>
     </div>
   </div>
 </template>
 <script>
 export default {
-  props: ['comments', 'commentsHistory']
+  props: ['comments', 'commentsHistory'],
+  inject: ['GStore']
 }
 </script>
 

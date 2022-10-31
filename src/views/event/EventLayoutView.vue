@@ -11,12 +11,15 @@
       <router-link class="list" :to="{ name: 'EventEdit' }"
         >View Comment</router-link
       >
-      <router-link class="list" :to="{ name: 'Doctor' }"
+      <router-link
+        v-if="isDoctor || isAdmin"
+        class="list"
+        :to="{ name: 'Doctor' }"
         >Docter Comment</router-link
       >
-      <router-link class="list" :to="{ name: 'ChangeRole' }"
+      <!-- <router-link class="list" :to="{ name: 'ChangeRole' }"
         >ChangeRole</router-link
-      >
+      > -->
     </div>
     <router-view :event="GStore.event" />
   </div>
@@ -31,6 +34,9 @@ export default {
     },
     isAdmin() {
       return AuthService.hasRoles('ROLE_ADMIN')
+    },
+    isDoctor() {
+      return AuthService.hasRoles('ROLE_DOCTOR')
     }
   }
 }

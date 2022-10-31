@@ -3,8 +3,8 @@
     <label for="name">Doctor Name:</label>
     <input id="name" v-model="name" />
 
-    <label for="id">ID:</label>
-    <input id="id" v-model="id" />
+    <!-- <label for="id">ID:</label>
+    <input id="id" v-model="id" /> -->
 
     <label for="comment">Comment:</label>
     <textarea id="comment" v-model="comment"></textarea>
@@ -21,13 +21,13 @@ export default {
       // patient_id: '',
       // patient_name: '',
       name: '',
-      comment: '',
-      id: ''
+      comment: ''
+      // id: ''
     }
   },
   methods: {
     onSubmit() {
-      if (this.name === '' || this.comment === '' || this.id === '') {
+      if (this.name === '' || this.comment === '') {
         alert('Comment incomplete. Please fill out every field.')
         return
       }
@@ -39,15 +39,15 @@ export default {
         // patient_id: GStore.event.id,
         // patient_name: GStore.event.name,
         name: this.name,
-        comment: this.comment,
-        id: this.id
+        comment: this.comment
+        // id: this.id
       }
       this.$emit('comment-submited', doctorComment)
       // this.patient_id = ''
       // this.patient_name = ''
       this.name = ''
       this.comment = ''
-      this.id = ''
+      // this.id = ''
     }
   }
 }

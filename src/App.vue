@@ -38,7 +38,7 @@
       </nav>
     </div>
     <nav>
-      <router-link :to="{ name: 'EventList' }">Home</router-link> |
+      <!-- <router-link :to="{ name: 'EventList' }">Home</router-link> | -->
       <!-- <router-link :to="{ name: 'about' }">About</router-link> | -->
       <span v-if="isAdmin">
         <router-link :to="{ name: 'AddEvent' }"> New Patients</router-link>
@@ -62,7 +62,7 @@ export default {
   methods: {
     logout() {
       AuthService.logout()
-      this.$router.go()
+      this.$router.push('/login')
     }
   }
 }

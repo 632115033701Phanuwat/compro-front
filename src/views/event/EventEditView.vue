@@ -4,11 +4,7 @@
       <CommentForm @comment-submited="addComment" />
     </div> -->
   <div class="col-12">
-    <CommentList
-      v-if="GStore.comments"
-      :comments="GStore.event.comment"
-      :commentsHistory="GStore.event"
-    />
+    <CommentList v-if="GStore.comments" :commentsHistory="GStore.event" />
   </div>
   <!-- </div> -->
 </template>

@@ -15,11 +15,49 @@
     <p>Address: {{ event.location }}</p>
     <p>Age: {{ event.age }}</p>
   </div>
+  <div class="stats">
+    <!-- <router-link
+            class="event-link"
+            :to="{ name: 'ChangeRoleToDoctor', params: { id: GStore.user.id } }"
+-->
+    <button
+      v-if="isAdmin"
+      class="btn hvr-underline-from-center"
+      @click="change"
+    >
+      Set to doctor
+    </button>
+    <!-- </router-link>
+          <router-link
+            class="event-link"
+            :to="{ name: 'ChangeRoleToPeople', params: { id: GStore.user.id } }"
+-->
+    <button
+      v-if="isAdmin"
+      class="btn hvr-underline-from-center"
+      @click="change"
+    >
+      Set to people
+    </button>
+  </div>
 </template>
 
 <script>
+import AuthService from '@/services/AuthService.js'
 export default {
-  props: ['id', 'event']
+  props: ['id', 'event'],
+  inject: ['GStore'],
+  computed: {
+    currentUser() {
+      return localStorage.getItem('user')
+    },
+    isAdmin() {
+      return AuthService.hasRoles('ROLE_ADMIN')
+    },
+    isDoctor() {
+      return AuthService.hasRoles('ROLE_DOCTOR')
+    }
+  }
 }
 </script>
 <style scoped>

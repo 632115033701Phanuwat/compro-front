@@ -1,24 +1,17 @@
-# lab03
+< SE331-2022-Project-Frontend >
+<h1>Group Name: Tokyo snap </h1>
 
-## Project setup
-```
-npm install
-```
+ ''| StudenID  |  NAME                | GITHUB
+-- | ----------| ---------------------| -------------------- |
+1  | 632115017 | NATTAPARIN SOMNUEK   | Nattaprin            |
+2  | 632115033 | PHANUWAT PANYA       | 632115037011Phanuwat |
+3  | 632115044 | ARANYA BARAMIMAHASAN | arymappy5954         |
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+<h1>Web Application URL</h1>
+http://50.19.197.106:8001
 
-### Compiles and minifies for production
-```
-npm run build
-```
+<h1>Backend URL</h1>
+https://github.com/632115033701Phanuwat/compro-backend
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<h1>Fontend URL</h1>
+https://github.com/632115033701Phanuwat/compro-frontend

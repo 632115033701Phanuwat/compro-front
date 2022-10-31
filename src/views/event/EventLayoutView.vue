@@ -48,11 +48,13 @@ export default {
   border-radius: 25px;
   background-color: #9fe2bf;
   color: black;
+  font-weight: bold;
   margin: 0px 0px 0px 40px;
 }
 .list:hover {
-  background-color: #40e0d0;
+  background-color: #31a224;
   transition: 0.5s;
-  color: #fff;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 </style>

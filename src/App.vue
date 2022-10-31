@@ -19,20 +19,26 @@
         </ul>
         <ul v-if="GStore.currentUser" class="navbar-nav ml-auto">
           <li class="nav-item">
-            <router-link to="/profile" class="nav-link">
-              <font-awesome-icon icon="user" />
-              {{ GStore.currentUser.name }}
-            </router-link>
+            <h5>
+              <router-link to="/profile" class="nav-link">
+                <font-awesome-icon icon="user" />
+                {{ GStore.currentUser.name }}
+              </router-link>
+            </h5>
           </li>
           <li class="nav-item">
-            <a class="nav-link" @click="logout">
-              <font-awesome-icon icon="sign-out-alt" /> Logout
-            </a>
+            <h5>
+              <a class="nav-link" @click="logout">
+                <font-awesome-icon icon="sign-out-alt" /> Logout
+              </a>
+            </h5>
           </li>
           <li class="nav-item">
-            <router-link to="/home" class="nav-link">
-              <font-awesome-icon icon="home" /> Home
-            </router-link>
+            <h5>
+              <router-link to="/home" class="nav-link">
+                <font-awesome-icon icon="home" /> Home
+              </router-link>
+            </h5>
           </li>
         </ul>
       </nav>
@@ -69,6 +75,9 @@ export default {
 </script>
 
 <style>
+/* .nav2{
+background-color: #fff;
+} */
 body {
   /* max-height: 100%; */
   background-image: url('~@/assets/Nurse Backgrounds.jfif');

@@ -74,6 +74,7 @@ export default {
 label {
   display: block;
   margin-top: 10px;
+  color: black;
 }
 .card-container.card {
   max-width: 350px !important;

@@ -170,7 +170,7 @@ export default {
   margin: auto;
   background-color: none;
   border-radius: 25px;
-  background-color: #9fe2bf;
+  background-color: #3c915e;
   color: #fff;
 }
 </style>

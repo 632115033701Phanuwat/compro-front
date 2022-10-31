@@ -9,7 +9,7 @@
     <label for="comment">Comment:</label>
     <textarea id="comment" v-model="comment"></textarea>
 
-    <input class="button" type="submit" value="Submit" />
+    <input v-if="isdoctor" class="button" type="submit" value="Submit" />
   </form>
 </template>
 <script>
@@ -76,6 +76,7 @@ label {
   -webkit-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
   box-shadow: 2px 15px -12px rgba(0, 0, 0, 0.57);
+  border: solid 2px black;
 }
 .comment-form .button {
   display: block;

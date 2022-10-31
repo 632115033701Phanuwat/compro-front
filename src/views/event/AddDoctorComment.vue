@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div v-if="isDoctor" class="col">
+    <div v-if="isDoctor || isAdmin" class="col">
       <CommentForm @comment-submited="addComment" />
     </div>
     <!-- <div v-if="isAdmin" class="col">

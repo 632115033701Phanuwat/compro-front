@@ -14,6 +14,8 @@ import EventService from '@/services/EventService'
 import OrganizerService from '@/services/OrganizerService.js'
 import Login from '@/views/LoginFormView.vue'
 import Register from '@/views/RegisterFormView.vue'
+import Doctor from '@/views/event/AddDoctorComment'
+import ChangeRole from '@/views/event/ChangeRole.vue'
 const routes = [
   {
     path: '/',
@@ -61,13 +63,26 @@ const routes = [
         component: EventVaccineDetali
       },
       {
+        path: 'Doctor',
+        name: 'Doctor',
+        props: true,
+        component: Doctor
+      },
+      {
         path: 'edit',
         name: 'EventEdit',
         props: true,
         component: EventEditView
+      },
+      {
+        path: 'ChangeRole',
+        name: 'ChangeRole',
+        props: true,
+        component: ChangeRole
       }
     ]
   },
+
   {
     path: '/add-event',
     name: 'AddEvent',

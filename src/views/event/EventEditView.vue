@@ -1,40 +1,48 @@
 <template>
-  <div class="row">
-    <div class="col-6">
+  <!-- <div class="row">
+    <div v-if="isDoctor" class="col-6">
       <CommentForm @comment-submited="addComment" />
-    </div>
-    <div class="col-6">
-      <CommentList
-        v-if="GStore.comment"
-        :comments="GStore.event.id"
-        :commentsHistory="GStore.event"
-      />
-    </div>
+    </div> -->
+  <div class="col-12">
+    <CommentList
+      v-if="GStore.comments"
+      :comments="GStore.event.comment"
+      :commentsHistory="GStore.event"
+    />
   </div>
+  <!-- </div> -->
 </template>
 <script>
-import CommentForm from '@/components/CommentFrom.vue'
+//import CommentForm from '@/components/CommentForm.vue'
 import CommentList from '@/components/CommentList.vue'
-import GStore from '@/store'
+//import AuthService from '@/service/AuthService'
+//import GStore from '@/store'
+//import CommentService from '@/service/CommentService.js'
 export default {
   inject: ['GStore'],
   components: {
-    CommentForm,
+    //CommentForm
     CommentList
   },
-  methods: {
-    addComment(comment) {
-      console.log(comment)
-      GStore.comments.push(comment)
-      GStore.event.doctorRec = GStore.comment.filter(
-        (event) => GStore.event.id == event.id
-      )
+  data() {
+    return {
+      newComment: null
     }
   }
+  // methods: {
+  //   addComment(comment) {
+  //     console.log(comment)
+  //     GStore.comments.push(comment)
+  //     // GStore.patient.doctorRec = GStore.comments.filter(
+  //     //   (patient) => GStore.patient.id == patient.patient_id
+  //     // )
+  //     CommentService.addComment(GStore.patient.id, comment)
+  //   }
+  // },
+  // computed: {
+  //   isDoctor() {
+  //     return AuthService.hasRoles('ROLE_DOCTOR')
+  //   }
+  // }
 }
 </script>
-<style scoped>
-.row {
-  margin: auto;
-}
-</style>

@@ -1,6 +1,6 @@
 <template>
   <div v-if="GStore.event">
-    <h1>{{ GStore.event.title }}</h1>
+    <!-- <h1>{{ GStore.event.tit}}</h1> -->
     <div id="nav">
       <router-link class="list" :to="{ name: 'EventDetails' }"
         >Details</router-link
@@ -9,15 +9,30 @@
         >Vaccine Details</router-link
       >
       <router-link class="list" :to="{ name: 'EventEdit' }"
+        >View Comment</router-link
+      >
+      <router-link class="list" :to="{ name: 'Doctor' }"
         >Docter Comment</router-link
+      >
+      <router-link class="list" :to="{ name: 'ChangeRole' }"
+        >ChangeRole</router-link
       >
     </div>
     <router-view :event="GStore.event" />
   </div>
 </template>
 <script>
+import AuthService from '@/services/AuthService.js'
 export default {
-  inject: ['GStore']
+  inject: ['GStore'],
+  computed: {
+    currentUser() {
+      return localStorage.getItem('user')
+    },
+    isAdmin() {
+      return AuthService.hasRoles('ROLE_ADMIN')
+    }
+  }
 }
 </script>
 <style>

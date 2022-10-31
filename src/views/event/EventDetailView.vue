@@ -2,6 +2,7 @@
   <blockquote></blockquote>
   <div class="color2">
     <h1>{{ event.name }}</h1>
+    <h1>{{ comment }}</h1>
   </div>
   <blockquote></blockquote>
   <div class="color">

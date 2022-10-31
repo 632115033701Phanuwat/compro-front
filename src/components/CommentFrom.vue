@@ -3,8 +3,8 @@
     <label for="name">Doctor Name:</label>
     <input id="name" v-model="name" />
 
-    <label for="date">Date:</label>
-    <input id="date" v-model="date" />
+    <label for="id">ID:</label>
+    <input id="id" v-model="id" />
 
     <label for="comment">Comment:</label>
     <textarea id="comment" v-model="comment"></textarea>
@@ -13,21 +13,21 @@
   </form>
 </template>
 <script>
-import GStore from '@/store'
+// import GStore from '@/store'
 export default {
   inject: ['GStore'],
   data() {
     return {
-      patient_id: '',
-      patient_name: '',
+      // patient_id: '',
+      // patient_name: '',
       name: '',
       comment: '',
-      date: null
+      id: ''
     }
   },
   methods: {
     onSubmit() {
-      if (this.name === '' || this.comment === '' || this.date === null) {
+      if (this.name === '' || this.comment === '' || this.id === '') {
         alert('Comment incomplete. Please fill out every field.')
         return
       }
@@ -36,18 +36,18 @@ export default {
         this.GStore.flashMessage = ''
       }, 3500)
       let doctorComment = {
-        patient_id: GStore.event.id,
-        patient_name: GStore.event.name,
+        // patient_id: GStore.event.id,
+        // patient_name: GStore.event.name,
         name: this.name,
         comment: this.comment,
-        date: this.date
+        id: this.id
       }
       this.$emit('comment-submited', doctorComment)
-      this.patient_id = ''
-      this.patient_name = ''
+      // this.patient_id = ''
+      // this.patient_name = ''
       this.name = ''
       this.comment = ''
-      this.date = null
+      this.id = ''
     }
   }
 }

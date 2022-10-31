@@ -29,17 +29,19 @@ export default {
   padding: 25px;
   width: 300px;
   cursor: pointer;
-  border: 1px solid #000000;
+  border: 3px solid #000000;
   margin-bottom: 18px;
   background-color: rgb(112, 216, 157);
   border-radius: 25px;
   margin: 35px;
+  font-weight: bold;
 }
 .event-card:hover {
   transform: scale(1.2);
   box-shadow: 20px 10px 20px 10px rgba(155, 3, 92, 0.2);
   background-color: palevioletred;
   color: #fff;
+  font-weight: bold;
 }
 
 .event-link {

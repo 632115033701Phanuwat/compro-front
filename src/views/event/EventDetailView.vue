@@ -1,10 +1,13 @@
 <template>
   <blockquote></blockquote>
+  <br />
+  <br />
   <div class="color2">
     <h1>{{ event.name }}</h1>
     <h1>{{ comment }}</h1>
   </div>
   <blockquote></blockquote>
+  <br />
   <div class="color">
     <div class="imgg">
       <img class="img" v-if="event.addimg" :src="event.addimg" alt="" />
@@ -12,9 +15,10 @@
       <!-- <img class="img" :src="event.imageUrls" alt="" /> -->
       <img v-for="url in event.imageUrls" :key="url" :src="url" />
     </div>
-    <p>Address: {{ event.location }}</p>
-    <p>Age: {{ event.age }}</p>
+    <h3>Address: {{ event.location }}</h3>
+    <h3>Age: {{ event.age }}</h3>
   </div>
+  <br />
   <div class="stats">
     <!-- <router-link
             class="event-link"
@@ -25,7 +29,7 @@
       class="btn hvr-underline-from-center"
       @click="change"
     >
-      Set to doctor
+      <h5>Set to doctor</h5>
     </button>
     <!-- </router-link>
           <router-link
@@ -37,7 +41,7 @@
       class="btn hvr-underline-from-center"
       @click="change"
     >
-      Set to people
+      <h5>Set to people</h5>
     </button>
   </div>
 </template>
@@ -79,8 +83,10 @@ img:hover {
   margin: auto;
   background-color: none;
   border-radius: 60px;
-  background-color: #6979a1;
-  color: #fff;
+  background-color: #ade7ba;
+  color: black;
+  font-weight: bold;
+  border: solid 2px black;
 }
 .color2 {
   padding: 10px;
@@ -88,8 +94,10 @@ img:hover {
   margin: auto;
   background-color: none;
   border-radius: 60px;
-  background-color: #69a173;
-  color: #fff;
+  background-color: #ade7ba;
+  color: black;
+  font-weight: bold;
+  border: solid 2px black;
 }
 /* .img {
   height: 150px;
@@ -97,5 +105,8 @@ img:hover {
 } */
 .imgg {
   margin: auto;
+}
+button {
+  font-weight: bold;
 }
 </style>

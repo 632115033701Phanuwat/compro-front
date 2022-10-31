@@ -138,6 +138,7 @@ label {
   color: red;
 }
 .color {
-  background-color: rgb(247, 182, 232);
+  border: solid 1px black;
+  background-color: rgb(73, 157, 42);
 }
 </style>

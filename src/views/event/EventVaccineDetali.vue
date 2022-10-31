@@ -52,7 +52,7 @@ h1 {
   color: rgb(255, 255, 255);
   margin: auto;
   margin-block: 50px;
-  background-color: rgb(229, 143, 143);
+  background-color: rgb(181, 81, 81);
   border-radius: 35px;
   height: 100px;
   width: 550px;
